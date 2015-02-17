@@ -2,7 +2,7 @@
 
 `npm install mediasize`
 
-Simple DOM module which replicates the css `background-size` attribute.
+Simple DOM module which replicates the css `background-size` attribute, but on any block element.
 
 ## Setup
 
@@ -10,8 +10,7 @@ Simple DOM module which replicates the css `background-size` attribute.
 var mediasize = require('mediasize')
 
 var media = mediasize($('[data-slide]'), {
-  mode  : 'cover',
-  parent : $(window)
+  mode  : 'cover'
 })
 
 media.start()
@@ -21,12 +20,12 @@ Require mediaSize. You can pass either a single element or an array of elements 
 
 ## Testing
 
-You can do a quick test by running `npm run watch`, which requires beefy to be installed: `npm install beefy -g`
+You can do a quick test by running `npm run watch`. You'll need Beefy for this, which you can install by running `npm install beefy -g`
 
 ## Options
 
 ### Mode 
-You can set **mode** as either `cover` or `contain`, just as you would the CSS background-size attribute.
+You can set **size** as either `cover` or `contain`, just as you would the CSS background-size attribute.
 
 ### Parent
 The dimensions of this element will be used as the basis of the new dimensions for your primary element(s). If no element is defined we default to `window`.
@@ -41,5 +40,6 @@ mediasize.start();
 Available methods:
 ```
 start           Start listening to window resize event
+refresh         Reformat everything
 stop            Stop listening to window resize event
 ```
