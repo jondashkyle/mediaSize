@@ -88,9 +88,9 @@ module.exports = function($elements, opts) {
      * Size mode
      */
     if ( _size === 'contain' ) {
-      check = (_parent.innerWidth/_parent.innerHeight) > _ratioY
+      _check = (_parent.innerWidth/_parent.innerHeight) > _ratioY
     } else if ( _size === 'cover' ) {
-      check = (_parent.innerWidth/_parent.innerHeight) < _ratioY
+      _check = (_parent.innerWidth/_parent.innerHeight) < _ratioY
     } else {
       console.warn('Please select a size mode')
     }
@@ -98,7 +98,7 @@ module.exports = function($elements, opts) {
     /**
      * Resize
      */
-    if ( check ) {
+    if ( _check ) {
       // Tall
       _height     = Math.ceil(_parent.innerHeight)
       _width      = Math.ceil(_parent.innerHeight * _ratioY)
