@@ -1,0 +1,21 @@
+{
+  "name": "mediaSize",
+  "version": "0.0.1",
+  "description": "Replicates css background-size formatting",
+  "main": "index.js",
+  "scripts": {
+    "test": "beefy test/test.js:bundle.js --cwd test --open --index=test/test.html"
+  },
+  "keywords": [
+    "dom",
+    "interface"
+  ],
+  "author": "Jon-Kyle Mohr",
+  "license": "ISC",
+  "dependencies": {
+    "extend": "~2.0.0"
+  },
+  "devDependencies": {
+    "watchify": "^2.3.0"
+  }
+}
