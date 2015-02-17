@@ -75,7 +75,7 @@ module.exports = function($elements, opts) {
      * Size
      */
     if ( _element.hasAttribute('data-size') ) {
-      _data.size = _element.getAttribute('data-size')
+      _size = _element.getAttribute('data-size')
     }
 
     /**
