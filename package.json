@@ -1,5 +1,5 @@
 {
-  "name": "mediaSize",
+  "name": "mediasize",
   "version": "0.0.1",
   "description": "Replicates css background-size formatting",
   "main": "index.js",
@@ -17,5 +17,9 @@
   },
   "devDependencies": {
     "watchify": "^2.3.0"
+  },
+  "repository" : {
+    "type": "git", 
+    "url": "https://github.com/jondashkyle/mediaSize"
   }
 }
