@@ -20,7 +20,7 @@ Require mediaSize. You can pass either a single element or an array of elements 
 
 ## Testing
 
-You can do a quick test by running `npm run watch`. You'll need Beefy for this, which you can install by running `npm install beefy -g`
+You can do a quick test by running `npm run test`. You'll need Beefy for this, which you can install by running `npm install beefy -g`
 
 ## Options
 
