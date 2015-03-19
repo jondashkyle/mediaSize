@@ -71,12 +71,15 @@ module.exports = function ($elements, opts) {
         _dimensions.h = window.innerHeight
         return _dimensions
       }
+      if(typeof _parent === 'object' && !helpers.isElement(_parent)){
+        _parent = _parent[0]
+      }
       if (helpers.isElement(_parent)) {
         _dimensions.w = _parent.clientWidth
         _dimensions.h = _parent.clientHeight
         return _dimensions
       }
-      if (_parent = closest(_element, _parent, false) || document.querySelector(_parent)) {
+      if (_parent = closest(_element, _parent) || document.querySelector(_parent)) {
         _dimensions.w = _parent.clientWidth
         _dimensions.h = _parent.clientHeight
         return _dimensions
@@ -113,7 +116,7 @@ module.exports = function ($elements, opts) {
 
     _parent = helpers.parentDimensions(_element, options.parent)
     if (!_parent) {
-      console.error('Parent option invalid')
+      console.error('Invalid parent option')
       return
     }
 
