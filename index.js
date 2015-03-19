@@ -45,7 +45,7 @@ module.exports = function ($elements, opts) {
         _ratios.x = _element.getAttribute('height') / _element.getAttribute('width')
         return _ratios
       } else if (_element.hasAttribute('data-aspect-ratio')) {
-        var _ratio = _element.getAttribute('data-aspect-ratio').split('x')
+        var _ratio = _element.getAttribute('data-aspect-ratio').split(':')
         _ratios.y = parseInt(_ratio[0]) / parseInt(_ratio[1])
         _ratios.x = parseInt(_ratio[1]) / parseInt(_ratio[0])
         return _ratios
