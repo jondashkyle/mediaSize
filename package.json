@@ -13,13 +13,14 @@
   "author": "Jon-Kyle Mohr",
   "license": "ISC",
   "dependencies": {
+    "closest": "0.0.1",
     "extend": "~2.0.0"
   },
   "devDependencies": {
     "watchify": "^2.3.0"
   },
-  "repository" : {
-    "type": "git", 
+  "repository": {
+    "type": "git",
     "url": "https://github.com/jondashkyle/mediaSize"
   }
 }
