@@ -2,7 +2,7 @@
 
 `npm install mediasize`
 
-Simple DOM module which replicates the css `background-size` attribute, but on any block element. Take a look at [an example](http://github.com/jondashkyle/mediaSize).
+Simple DOM module which replicates the css `background-size` attribute, but on any block element. Take a look at [an example](http://jondashkyle.github.io/mediaSize/).
 
 ## Setup
 
