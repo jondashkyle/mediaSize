@@ -8,12 +8,13 @@ module.exports = function ($elements, opts) {
   var options, data
 
   options = extend(true, {
-    'size': 'cover',
-    'parent': 'window'
+    size: 'cover',
+    parent: 'window',
+    limit: false
   }, opts)
 
   data = {
-    'active': false
+    active: false
   }
 
   if ($elements === undefined) {
@@ -34,7 +35,6 @@ module.exports = function ($elements, opts) {
   }
 
   var helpers = {
-
     elementRatio : function(_element) {
       var _ratios = {
         x : 0,
@@ -87,7 +87,6 @@ module.exports = function ($elements, opts) {
       _dimensions = false
       return _dimensions
     }
-
   }
 
   // Starting to get unwieldy... break this into smaller pieces soon
@@ -95,6 +94,8 @@ module.exports = function ($elements, opts) {
     var _size = options.size
     var _parent = null
     var _ratio = null
+    var _origHeight = 0
+    var _origWidth = 0 
     var _height = 0
     var _width = 0
     var _marginTop = 0
@@ -105,6 +106,9 @@ module.exports = function ($elements, opts) {
     if (!_ratio) {
       console.error('Element needs height and width defined')
       return
+    } else {
+      _origHeight = parseInt(_element.getAttribute('height'))
+      _origWidth = parseInt(_element.getAttribute('width'))
     }
 
     if (_element.hasAttribute('data-size')) {
@@ -132,15 +136,23 @@ module.exports = function ($elements, opts) {
       // Tall
       _height = Math.ceil(_parent.h)
       _width = Math.ceil(_parent.h * _ratio.y)
-      _marginTop = 0
-      _marginLeft = Math.ceil((_parent.w - _width) / 2)
     } else {
       // Wide
       _height = Math.ceil(_parent.w * _ratio.x)
       _width = Math.ceil(_parent.w)
-      _marginTop = Math.ceil((_parent.h - _height) / 2)
-      _marginLeft = 0
     }
+
+    if (_size === 'contain' && options.limit) {
+      if (_height > _origHeight) {
+        _height = _origHeight
+      }
+      if (_width > _origWidth) {
+        _width = _origWidth
+      }
+    } 
+
+    _marginTop = Math.ceil((_parent.h - _height) / 2)
+    _marginLeft = Math.ceil((_parent.w - _width) / 2)
 
     /**
      * Set the styles
