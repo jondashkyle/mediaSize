@@ -10,7 +10,7 @@ Simple DOM module which replicates the css `background-size` attribute, but on a
 var mediasize = require('mediasize')
 
 var media = mediasize($('[data-slide]'), {
-  mode  : 'cover'
+  size : 'cover'
 })
 
 media.start()
