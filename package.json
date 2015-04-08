@@ -4,7 +4,8 @@
   "description": "Replicates css background-size formatting",
   "main": "index.js",
   "scripts": {
-    "test": "beefy test/test.js:bundle.js --cwd test --open --index=test/test.html"
+    "build": "browserify test.js -o bundle.js",
+    "test": "beefy test.js:bundle.js --cwd test --open --index=index.html"
   },
   "keywords": [
     "dom",
