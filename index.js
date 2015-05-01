@@ -10,7 +10,8 @@ module.exports = function ($elements, opts) {
   options = extend(true, {
     size: 'cover',
     parent: 'window',
-    limit: false
+    limit: false,
+    center: true
   }, opts)
 
   data = {
@@ -149,10 +150,15 @@ module.exports = function ($elements, opts) {
       if (_width > _origWidth) {
         _width = _origWidth
       }
-    } 
+    }
 
-    _marginTop = Math.ceil((_parent.h - _height) / 2)
-    _marginLeft = Math.ceil((_parent.w - _width) / 2)
+    if (! options.center && options.size === 'contain') {
+      _marginTop = 0
+      _marginLeft = 0
+    } else {
+      _marginTop = Math.ceil((_parent.h - _height) / 2)
+      _marginLeft = Math.ceil((_parent.w - _width) / 2)
+    }
 
     /**
      * Set the styles

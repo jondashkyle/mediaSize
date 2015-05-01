@@ -1,6 +1,6 @@
 {
   "name": "mediasize",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Replicates css background-size formatting",
   "main": "index.js",
   "scripts": {
