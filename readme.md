@@ -33,7 +33,7 @@ When size is set to *contain* and **center** is set to **true** this centers the
 ## Limit
 When the size is set to *contain* and **limit** is set to **true**, prevent the image from scaling past it's original size.
 
-### Parent
+## Parent
 The dimensions of this element will be used as the basis of the new dimensions for your primary element(s). If no element is defined we default to `window`.
 
 ## Methods
